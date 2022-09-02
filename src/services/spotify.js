@@ -4,25 +4,15 @@
 //URI DE APÍ
 import{URI,PETICION} from '../helpers/datosPeticion.js'
 
-//2. A hacer que ome?
-//Metodo
+//Traigo funcion de consume
+import {consultarCanciones} from './servicioconsultarcanciones.js'
 
-//Andate pues ome 
-//Consuma el Api (Utilizando promesas )
-fetch(URI, PETICION)
-.then(function(respuesta){
-    return respuesta.json()
-})
+import { pintarCanciones } from '../controllers/controladorPintarCanciones.js'
 
-.then(function(respuesta){
-    console.log(respuesta)
-    console.log(respuesta.tracks)
+//Usamos la funcion para consumir
 
-    let fila = document.getElementById('fila')
-    
-    
-})
+let canciones = await consultarCanciones(URI,PETICION)
 
-.catch(function(respuestaError){
-    console.log(respuestaError)
-})
+//console.log(canciones)
+
+pintarCanciones(canciones.tracks)

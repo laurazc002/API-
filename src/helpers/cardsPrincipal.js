@@ -1,0 +1,7 @@
+let cardsPrincipal = [
+
+    card1={
+
+    }
+
+]
