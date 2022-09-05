@@ -14,12 +14,12 @@ botonArtista.addEventListener("click",function(evento){
 
     async function activarServicio(){
         let canciones = await consultarCanciones(URI,PETICION)
-        console.log(canciones)
+        pintarCanciones(canciones.tracks)
+    
     }
     
     activarServicio()
 
-  let canciones = pintarCanciones(canciones.tracks)
 
     
     
